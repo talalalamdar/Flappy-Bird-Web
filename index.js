@@ -140,7 +140,9 @@ window.addEventListener('load', () => {
   function getBestRecord() {
     const bestRecord = window.localStorage.getItem('fb-best-record');
 
-    bestRecordElement.innerText = `Best record: ${bestRecord}`
+    if (bestRecord) {
+      bestRecordElement.innerText = `Best record: ${bestRecord}`
+    }
   }
 
   const gravityInterval = setInterval(handleGravity, 20);
